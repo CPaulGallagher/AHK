@@ -59,22 +59,22 @@ mPreAssessment := " Negative Screening for COVID-19 completed on arrival. Denies
 mPostAssessment := " Access dressing clean, dry, and intact. Patient shows no signs or symptoms of discomfort at this time. Patient discharged in care of self with spouse and other family present to assist. "
 
 FormatTime, mTime,, HH:mm ; A_Hour A_Min If blank or omitted, it defaults to the current local date and time
-mSBP := "105"
-mDBP := "50"
-mHR  := "68"
-mQb := "400"
-mQd := "800"
-mArt := "-200"	 
-mVen := "200"
+mSBP := ""
+mDBP := ""
+mHR  := ""
+mQb := ""
+mQd := ""
+mArt := ""	 
+mVen := ""
 mUFR := 0
-mTMP := "20"
+mTMP := ""
 mTemp := "37"
-mCond := "14.1"
+mCond := "14"
 mUF := 0
 FormatTime, mDate,, MM/dd/yyyy ; "10/08/2025"
 ; mTime := "1540"
-mHepPumpRate := "0.0"
-mHepPumpVol := "0.0"
+mHepPumpRate := ""
+mHepPumpVol := ""
 
 mHDline1 := mTime . mTAB . mSBP . "/" . mDBP . mTAB . mTAB .mTAB . mHR . mTAB . mTAB 
 mHDline2 := mQb . mTAB . mQd . mTAB . mArt . mTAB . mVen . mTAB . mUFR . mTAB . mTMP . mTAB . mCond . mTAB . mTAB . mTAB . mTAB . mUF
