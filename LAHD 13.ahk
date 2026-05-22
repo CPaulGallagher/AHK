@@ -59,22 +59,22 @@ mPreAssessment := " Negative Screening for COVID-19 completed on arrival. Denies
 mPostAssessment := " Access dressing clean, dry, and intact. Patient shows no signs or symptoms of discomfort at this time. Patient discharged in care of self with spouse and other family present to assist. "
 
 FormatTime, mTime,, HH:mm ; A_Hour A_Min If blank or omitted, it defaults to the current local date and time
-mSBP := ""
-mDBP := ""
-mHR  := ""
-mQb := ""
-mQd := ""
-mArt := ""	 
-mVen := ""
+mSBP := "105"
+mDBP := "50"
+mHR  := "68"
+mQb := "400"
+mQd := "800"
+mArt := "-200"	 
+mVen := "200"
 mUFR := 0
-mTMP := ""
+mTMP := "20"
 mTemp := "37"
-mCond := "14"
+mCond := "14.1"
 mUF := 0
 FormatTime, mDate,, MM/dd/yyyy ; "10/08/2025"
 ; mTime := "1540"
-mHepPumpRate := ""
-mHepPumpVol := ""
+mHepPumpRate := 0
+mHepPumpVol := 0
 
 mHDline1 := mTime . mTAB . mSBP . "/" . mDBP . mTAB . mTAB .mTAB . mHR . mTAB . mTAB 
 mHDline2 := mQb . mTAB . mQd . mTAB . mArt . mTAB . mVen . mTAB . mUFR . mTAB . mTMP . mTAB . mCond . mTAB . mTAB . mTAB . mTAB . mUF
@@ -436,7 +436,7 @@ Return
 
 ^w::
    Send,Kg over Target Weight after treatment.{space}
-   Send, Cautioned to limit fluid intake. Advised to go to ER if chest pain or shortness of breath developes. Offered extra treatment patient agreed declined.
+   Send, Cautioned to limit fluid intake. Advised to go to ER if chest pain or shortness of breath develops. Offered extra treatment patient agreed declined.
 Return
 
 :*:cstart::
@@ -611,8 +611,8 @@ Loadwindow:
    Gui gHDLine:Add, Edit, vmHDLineComment    x15 y150 w800 h120 ; This can be entered by Win+Z or menuBar
    Gui gHDLine:Add, Button, x780 y05 w50 h32, &OK ; The label ButtonOK (if it exists) will be run when the button is pressed.
    Gui gHDLine:Add, Button, x780 y35 w50 h32, &Exit ; The label ButtonExit (if it exists) will be run when the button is pressed.
-   Gui gHDLine:Add, Edit, vmHeparinPumpRate x320 y80 w50 h21  +Center,  %mHepPumpRate%
-   Gui gHDLine:Add, Edit, vmHeparinPumVol   x380 y80 w50 h21  +Center,  %mHepPumpVol%
+   Gui gHDLine:Add, Edit, vmHepPumpRate x320 y80 w50 h21  +Center,  %mHepPumpRate%
+   Gui gHDLine:Add, Edit, vmHepPumpVol   x380 y80 w50 h21  +Center,  %mHepPumpVol%
    Gui gHDLine:Add, Edit, vmDate    x27 y80 w100 h21  +Center , %mDate%
    
 ;   Return
